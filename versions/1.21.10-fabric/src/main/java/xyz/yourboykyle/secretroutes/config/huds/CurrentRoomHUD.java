@@ -4,6 +4,20 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import xyz.yourboykyle.secretroutes.Main;
 import xyz.yourboykyle.secretroutes.utils.RoomDirectionUtils;
+public static WitherShieldHUD witherShieldHUD;
+recordingHUD = new RecordingHUD();
+currentRoomHUD = new CurrentRoomHUD();
+witherShieldHUD = new WitherShieldHUD();
+WitherShieldManager.register();
+
+
+HudRenderCallback.EVENT.register((drawContext, tickDelta) -> {
+    recordingHUD.render(drawContext);
+    currentRoomHUD.render(drawContext);
+    if (witherShieldHUD != null) {
+        witherShieldHUD.render(drawContext);
+    }
+});
 
 public class CurrentRoomHUD {
 
