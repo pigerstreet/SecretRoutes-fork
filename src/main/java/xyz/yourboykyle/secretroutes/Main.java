@@ -42,6 +42,8 @@ import xyz.yourboykyle.secretroutes.deps.dungeonrooms.handlers.PacketHandler;
 import xyz.yourboykyle.secretroutes.events.*;
 import xyz.yourboykyle.secretroutes.utils.*;
 import xyz.yourboykyle.secretroutes.utils.autoupdate.UpdateManager;
+import xyz.yourboykyle.secretroutes.config.huds.WitherShieldHUD;
+import xyz.yourboykyle.secretroutes.events.WitherShieldManager;
 
 import java.awt.*;
 import java.io.File;
@@ -53,6 +55,7 @@ import static xyz.yourboykyle.secretroutes.utils.ChatUtils.sendChatMessage;
 
 @Mod(modid = Main.MODID, name = Main.NAME, version = Main.VERSION)
 public class Main {
+    
     public static final String MODID = "secretroutesmod";
     public static final String NAME = "SecretRoutes";
     public static final String VERSION = "1.0.0-beta2";
@@ -63,6 +66,7 @@ public class Main {
     private final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     public final static File logDir = new File(Minecraft.getMinecraft().mcDataDir.getAbsolutePath() + File.separator + "logs" + File.separator + "SecretRoutes");
     public static File outputLogs;
+    
 
     public static Room currentRoom = new Room(null);
     public static RouteRecording routeRecording = null;
